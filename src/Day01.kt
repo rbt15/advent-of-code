@@ -6,7 +6,6 @@ fun main() {
         return sums.windowed(2).count { it[0] < it[1] }
     }
 
-
     val input = readInput("Day01").map { it.toInt() }
     println(part1(input))
     println(part2(input))
