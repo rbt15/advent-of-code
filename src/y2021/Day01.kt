@@ -1,3 +1,7 @@
+package y2021
+
+import readInput
+
 fun main() {
     fun part1(input: List<Int>): Int = input.windowed(2).count { it[0] < it[1] }
 
