@@ -12,10 +12,8 @@ fun main() {
     fun part2(input: List<String>): Int {
         val groups = input.chunked(3)
 
-        return groups.sumOf {
-            val (first, second, third) = it
-            val commonChar = first.toSet().intersect(second.toSet()).intersect(third.toSet()).first()
-            commonChar.toPriority()
+        return groups.sumOf { (first, second, third) ->
+            first.toSet().intersect(second.toSet()).intersect(third.toSet()).first().toPriority()
         }
     }
 
