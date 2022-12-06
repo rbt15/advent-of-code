@@ -15,8 +15,16 @@ fun main() {
         return stacks.mapNotNull { it.lastOrNull() }.toCharArray()
     }
 
-    fun part2(input: List<String>): Int {
-        return 1
+    fun part2(input: List<String>): CharArray {
+        val stacks = parseStack(input.subList(0, input.indexOf("") - 1))
+        val moves = input.subList(input.indexOf("") + 1, input.size). map { it.extractMove() }
+
+        moves.forEach { (move, from, to) ->
+            stacks[to-1].addAll(stacks[from-1].takeLast(move))
+            repeat(move) { if (stacks[from - 1].isNotEmpty()) stacks[from - 1].removeLast() }
+        }
+
+        return stacks.mapNotNull { it.lastOrNull() }.toCharArray()
     }
 
     val input = readInput("Day5")
