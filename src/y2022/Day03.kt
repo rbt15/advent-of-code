@@ -22,7 +22,7 @@ fun main() {
     println(part2(input))
 }
 
-fun Char.toPriority(): Int {
+private fun Char.toPriority(): Int {
     val lowerChars = "abcdefghijklmnopqrstuvwxyz"
     val alphabet = lowerChars.plus(lowerChars.uppercase())
 

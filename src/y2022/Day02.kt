@@ -40,21 +40,21 @@ fun getWinBonus(p1: String, p2: String): Int {
     }
 }
 
-fun String.toMove(): String = when(this) {
+private fun String.toMove(): String = when(this) {
     "A", "X" -> "Rock"
     "B", "Y" -> "Paper"
     "C", "Z" -> "Scissors"
     else -> throw Exception()
 }
 
-fun String.toResult(): String = when(this) {
+private fun String.toResult(): String = when(this) {
     "X" -> "Lose"
     "Y" -> "Draw"
     "Z" -> "Win"
     else -> throw Exception()
 }
 
-fun String.toScore(): Int = when(this) {
+private fun String.toScore(): Int = when(this) {
     "Rock" -> 1
     "Paper" -> 2
     "Scissors" -> 3
